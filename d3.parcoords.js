@@ -209,7 +209,6 @@ pc.scale = function(d, domain) {
 };
 
 pc.flip = function(d) {
-	//yscale[d].domain().reverse();					// does not work
 	yscale[d].domain(yscale[d].domain().reverse()); // works
 
 	return this;
