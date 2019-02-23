@@ -1,59 +1,217 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
-body {
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+html, body {
+  background-color: #faf9f0;
+  font-family: 'Quicksand';
+  width: 95%;
+  margin-left: 30px;
   font-size: 14px;
-  font-family: "Source Code Pro", Consolas, monaco, monospace;
-  margin: 20px auto 20px;
-  width: 960px;
-  line-height: 1.45em;
-}
-a {
-  color: #454545;
-}
-a:hover {
-  color: #000;
-}
-ul {
-  margin: 0 20px;
-  padding: 0;
-}
-.dark {
-  background: #222;
-}
-#example {
-  min-height: 300px;
-  margin: 12px 0;
-}
-p {
-  width: 560px;
-}
-pre {
-  color: #444;
-  font-family: Ubuntu Mono, Monaco, monospace;
-  padding: 4px 8px;
-  background: #f2f2f2;
-  border: 1px solid #ccc;
-}
-h1 small {
-  font-weight: normal;
-  font-size: 0.5em;
-}
-h3 {
-  margin-top: 40px;
-}
-.float {
-  float: left;
-}
-.centered {
-  text-align: center;
-}
-.hide {
-  display: none;
-}
-input {
-  font-size: 16px;
 }
 
-/* img styles */
+.container {
+  padding-top: 40px;
+}
+
+h1 {
+  padding-bottom: 30px;
+}
+.graph {
+  display: block;
+}
+.waveSelection {
+  float: right;
+  width: 10%;
+}
+.waveCheckbox {
+  font-size: 13px;
+  padding: 2px;
+  padding-left: 8px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.sortGrid {
+  display: inherit;
+  margin-top: -15px;
+  padding-left: 30px;
+}
+#sortGridOneDiv {
+  margin-top: 250px;
+}
+.sortGraph {
+  display: inherit;
+  margin-top: -15px;
+}
+.searchInputDiv {
+  margin-top: -15px;
+}
+.sources {
+  font-size: 12px;
+}
+footer {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  position: relative;
+  color: #000;
+}
+.legend {
+  font-size: 11px;
+  margin-top: -10px;
+  padding-left: 10px;
+}
+div.image {
+  display: inline-table;
+}
+.notabene {
+  font-size: 10px;
+  font-style: italic;
+  margin-top: -10px;
+}
+.separator {
+  height: 100px;
+}
+#firstIteration {
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+}
+#firstIteration:hover {
+  background-color: #7f7f7f;
+}
+
+/*************************************************
+* HEADER
+*************************************************/
+header {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #f2f2f2;
+  height: 50px;
+}
+header h3 {
+  float: left;
+  padding-left: 15px;
+}
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+  float: right;
+  list-style-type: none;
+}
+/* Float the list items side by side */
+ul.topnav li {
+  float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0px 10px;
+    text-decoration: none;
+    transition: 0.1s;
+    font-size: 15px;
+}
+/* Change background color of links on hover */
+ul.topnav li a:hover {
+  background-color: #555;
+}
+
+/*************************************************
+* COLOR PALETTE
+*************************************************/
+#colorPalette {
+  display: inline-flex;
+  height: 15px;
+  font-size: 11px;
+}
+#color1 {
+  background-color: #FFFFFF;
+  width: 15px;
+}
+#color2 {
+  width: 15px;
+  background-color:#bfbfbf;
+}
+#color3 {
+  width: 15px;
+  background-color: #7f7f7f;
+
+}
+#color4 {
+  width: 15px;
+  background-color: #3f3f3f;
+}
+#color5 {
+  width: 15px;
+  background-color: #000000;
+}
+
+/*************************************************
+* GRID STYLE
+*************************************************/
+#gridOne {
+  position: relative;
+  overflow: scroll;
+  border: 1px solid black;
+}
+#gridTwo {
+  position: relative;
+  overflow: scroll;
+  border: 1px solid black;
+}
+.row,
+.header {
+  clear: left;
+  font-size: 10px;
+  line-height: 18px;
+  height: 18px;
+}
+.row:nth-child(odd) {
+  background: rgba(0,0,0,0.05);
+}
+.header {
+  font-size: 11px;
+  border-bottom: 1px solid black;
+}
+.row:hover {
+  background-color: #aaaaaa;
+}
+#gridOne .cell {
+  float: left;
+  text-align: center;
+  width: 9%;
+  height: 18px;
+}
+#gridTwo .cell {
+  float: left;
+  text-align: center;
+  width: 5.8%;
+  height: 18px;
+}
+
+#gridTwo .header {
+  line-height: 10px;
+  height: 20px;
+}
+
+.col-0 {
+  width: 80px;
+  text-align: left;
+}
+
+/*************************************************
+* IMAGES
+*************************************************/
 img {
   width: 400px;
   height: 280px;
@@ -76,62 +234,4 @@ img {
 }
 #img_tool_color {
   height: 150px;
-}
-
-/* data table styles */
-  #grid { height: 240px; }
-  .row, .header { clear: left; font-size: 11px; line-height: 24px; height: 24px; }
-  .row:nth-child(odd) { background: rgba(0,0,0,0.05); }
-  .header { font-weight: bold; }
-  .cell { float: left; overflow: hidden; white-space: nowrap; width: 160px; height: 18px; }
-  .col-0 { width: 120px; }
-
-  
-/* parcoords styles */
-.parcoords > svg, .parcoords > canvas { 
-  font: 11px "Source Code Pro", Consolas, monaco, monospace;
-  position: absolute;
-}
-.parcoords > canvas {
-  pointer-events: none;
-}
-
-.parcoords text.label {
-  cursor: default;
-}
-
-.parcoords rect.background {
-  fill: transparent;
-}
-.parcoords rect.background:hover {
-  fill: rgba(120,120,120,0.2);
-}
-.parcoords .resize rect {
-  fill: rgba(0,0,0,0.1);
-}
-.parcoords rect.extent {
-  fill: rgba(255,255,255,0.25);
-  stroke: rgba(0,0,0,0.6);
-}
-.parcoords .axis line, .parcoords .axis path {
-  fill: none;
-  stroke: #454545;
-  shape-rendering: crispEdges;
-}
-.parcoords canvas {
-  opacity: 1;
-  -moz-transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;
-  -o-transition: opacity 0.5s;
-}
-.parcoords canvas.faded {
-  opacity: 0.25;
-}
-.parcoords {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
