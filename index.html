@@ -23,7 +23,7 @@
     <div class="container" id="DPOne">
         <h2>Discovery Process 1</h2>
         
-        <p>My research question is knowing people's confidence ( example: about women organisation ) in different countries.( In DP2, it will be for several aspects of confidence.
+        <p>My research question is knowing people's confidence ( example: about women organisation ) in different countries. Trying to find some patterns.( In DP2, it will be for several aspects of confidence.)
         </p>
         <p>Firstly, I choose the wave and some countries and each variable “confidence:XXX”.
         </p>
@@ -60,6 +60,19 @@
         </p>
         
     </div>
+    <div>
+        <form>
+            <a href="#" type="button" id= "date1" name="Wave1.csv"  value="2010-2014" onclick="loadData(this.name)">2010-2014</a>
+            
+            <a href="#" type="button" id= "date2" name="Wave2.csv"  value="2005-2009" onclick="loadData(this.name)">2005-2009</a>
+            
+            <a href="#" type="button" id= "date3" name="Wave3.csv"  value="2000-2004" onclick="loadData(this.name)">2000-2004</a>
+            
+            <a href="#" type="button" id= "date4" name="Wave4.csv"  value="1995-1999" onclick="loadData(this.name)">1995-1999</a>
+            
+        </form>
+        
+    </div>
     <div id="example" class="parcoords"></div>
     <div id="grid"></div>
     
@@ -75,19 +88,7 @@
         .color(color)
         .alpha(0.4);
         
-        <div>
-        <form>
-        <a href="#" type="button" id= "date1" name="Wave1.csv"  value="2010-2014" onclick="loadData(this.name)">2010-2014</a>
         
-        <a href="#" type="button" id= "date2" name="Wave2.csv"  value="2005-2009" onclick="loadData(this.name)">2005-2009</a>
-        
-        <a href="#" type="button" id= "date3" name="Wave3.csv"  value="2000-2004" onclick="loadData(this.name)">2000-2004</a>
-        
-        <a href="#" type="button" id= "date4" name="Wave4.csv"  value="1995-1999" onclick="loadData(this.name)">1995-1999</a>
-        
-        </form>
-        
-        </div>
         // load csv file and create the chart
         function loadData(val){
             d3.csv(val, function(data) {
