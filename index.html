@@ -1,65 +1,65 @@
 <!doctype html>
 <head>
-	<meta charset="utf-8">
-	<title>IVIS19-Ass2_Xing_An_Confidence_about_several_aspects</title> 
-	<link rel="stylesheet" href="style.css">
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
-	<script src="d3.parcoords.js"></script>
-	<script src="div.grid.js"></script>
-    <link rel="stylesheet" type="text/css" href="style2.css">
-	
-	
+    <meta charset="utf-8">
+        <title>IVIS19-Ass2_Xing_An_Confidence_about_several_aspects</title>
+        <link rel="stylesheet" href="style.css">
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+            <script src="d3.parcoords.js"></script>
+            <script src="div.grid.js"></script>
+            <link rel="stylesheet" type="text/css" href="style2.css">
+                
+                
 </head>
 
 <body>
-
-	<header>
-		<h3>IVIS19-Ass2-Xing-An</h3>
-	</header>
-
-	<!-- Discovery Process 1
-	-->
-	<div class="container" id="DPOne">
-		<h2>Discovery Process 1</h2>
-
-		<p>My research question is knowing people's confidence ( example: about women organisation ) in different countries.( In DP2, it will be for several aspects of confidence.		
-                </p>
-		<p>Firstly, I choose the wave and some countries and each variable “confidence:XXX”.
-                </p>
-		<div>
-			<div class="image" style="float:left;">
-		        	<img src="img/DP1_1.png"></img>
-			</div>
-			<div class="image">
-				<img src="img/DP1_2.png"></img>
-			</div>
-		</div>
-		<p>For example, I choose to find whether people in different countries are confident about the women's organisation.
-		</p>
-
-		<div class="image">
-			<img src="img/DP1_3.png"></img>
-		</div>
-		
-		<p>
-			The result could be shown in table and graph.The table is shown but number is not that visible, so I choose the bar chart and pie chart.
-		</p>
-		<div>
-			<div class="image" style="float:left;">
-				  <img src="img/DP1_4.png"></img>
-			</div>
-			<div class="image">
-				  <img src="img/DP1_5.png"></img>
-			</div>
-                        <div class="image">
-				  <img src="img/DP1_6.png"></img>
-			</div>                
-		</div>
-		<p>We could see that for the confidence of the women, more than half of total countries are confidence about. The least confident country is Egypt. But to see exactly and compare the other confidence factor together, the visualization is not applicable, I have to change the variable each time. 
-		</p>
-		
-	</div>
+    
+    <header>
+        <h3>IVIS19-Ass2-Xing-An</h3>
+    </header>
+    
+    <!-- Discovery Process 1
+     -->
+    <div class="container" id="DPOne">
+        <h2>Discovery Process 1</h2>
+        
+        <p>My research question is knowing people's confidence ( example: about women organisation ) in different countries.( In DP2, it will be for several aspects of confidence.
+        </p>
+        <p>Firstly, I choose the wave and some countries and each variable “confidence:XXX”.
+        </p>
+        <div>
+            <div class="image" style="float:left;">
+                <img src="img/DP1_1.png"></img>
+            </div>
+            <div class="image">
+                <img src="img/DP1_2.png"></img>
+            </div>
+        </div>
+        <p>For example, I choose to find whether people in different countries are confident about the women's organisation.
+        </p>
+        
+        <div class="image">
+            <img src="img/DP1_3.png"></img>
+        </div>
+        
+        <p>
+        The result could be shown in table and graph.The table is shown but number is not that visible, so I choose the bar chart and pie chart.
+        </p>
+        <div>
+            <div class="image" style="float:left;">
+                <img src="img/DP1_4.png"></img>
+            </div>
+            <div class="image">
+                <img src="img/DP1_5.png"></img>
+            </div>
+            <div class="image">
+                <img src="img/DP1_6.png"></img>
+            </div>
+        </div>
+        <p>We could see that for the confidence of the women, more than half of total countries are confidence about. The least confident country is Egypt. But to see exactly and compare the other confidence factor together, the visualization is not applicable, I have to change the variable each time.
+        </p>
+        
+    </div>
     <div id="example" class="parcoords"></div>
     <div id="grid"></div>
     
@@ -76,119 +76,7 @@
         .alpha(0.4);
         
         // load csv file and create the chart
-        d3.csv('Wave1.csv', function(data) {
-               parcoords
-               .data(data)
-               .render()
-               .brushMode("1D-axes");  // enable brushing
-               
-               // create data table, row hover highlighting
-               var grid = d3.divgrid();
-               d3.select("#grid")
-               .datum(data.slice(0,10))
-               .call(grid)
-               .selectAll(".row")
-               .on({
-                   "mouseover": function(d) { parcoords.highlight([d]) },
-                   "mouseout": parcoords.unhighlight
-                   });
-               
-               // update data table on brush event
-               parcoords.on("brush", function(d) {
-                            d3.select("#grid")
-                            .datum(d.slice(0,10))
-                            .call(grid)
-                            .selectAll(".row")
-                            .on({
-                                "mouseover": function(d) { parcoords.highlight([d]) },
-                                "mouseout": parcoords.unhighlight
-                                });
-                            });
-        d3.csv('Wave2.csv', function(data) {
-               parcoords
-               .data(data)
-               .render()
-               .brushMode("1D-axes");  // enable brushing
-               
-               // create data table, row hover highlighting
-               var grid = d3.divgrid();
-               d3.select("#grid")
-               .datum(data.slice(0,10))
-               .call(grid)
-               .selectAll(".row")
-               .on({
-                   "mouseover": function(d) { parcoords.highlight([d]) },
-                   "mouseout": parcoords.unhighlight
-                   });
-               
-               // update data table on brush event
-               parcoords.on("brush", function(d) {
-                            d3.select("#grid")
-                            .datum(d.slice(0,10))
-                            .call(grid)
-                            .selectAll(".row")
-                            .on({
-                                "mouseover": function(d) { parcoords.highlight([d]) },
-                                "mouseout": parcoords.unhighlight
-                                });
-                            });
-        d3.csv('Wave3.csv', function(data) {
-               parcoords
-               .data(data)
-               .render()
-               .brushMode("1D-axes");  // enable brushing
-               
-               // create data table, row hover highlighting
-               var grid = d3.divgrid();
-               d3.select("#grid")
-               .datum(data.slice(0,10))
-               .call(grid)
-               .selectAll(".row")
-               .on({
-                   "mouseover": function(d) { parcoords.highlight([d]) },
-                   "mouseout": parcoords.unhighlight
-                   });
-               
-               // update data table on brush event
-               parcoords.on("brush", function(d) {
-                            d3.select("#grid")
-                            .datum(d.slice(0,10))
-                            .call(grid)
-                            .selectAll(".row")
-                            .on({
-                                "mouseover": function(d) { parcoords.highlight([d]) },
-                                "mouseout": parcoords.unhighlight
-                                });
-                            });
-        d3.csv('Wave4.csv', function(data) {
-               parcoords
-               .data(data)
-               .render()
-               .brushMode("1D-axes");  // enable brushing
-               
-               // create data table, row hover highlighting
-               var grid = d3.divgrid();
-               d3.select("#grid")
-               .datum(data.slice(0,10))
-               .call(grid)
-               .selectAll(".row")
-               .on({
-                   "mouseover": function(d) { parcoords.highlight([d]) },
-                   "mouseout": parcoords.unhighlight
-                   });
-               
-               // update data table on brush event
-               parcoords.on("brush", function(d) {
-                            d3.select("#grid")
-                            .datum(d.slice(0,10))
-                            .call(grid)
-                            .selectAll(".row")
-                            .on({
-                                "mouseover": function(d) { parcoords.highlight([d]) },
-                                "mouseout": parcoords.unhighlight
-                                });
-                            });
-        d3.csv('Wave5.csv', function(data) {
+        d3.csv('planet.csv', function(data) {
                parcoords
                .data(data)
                .render()
@@ -218,12 +106,8 @@
                             });
                });
         </script>
-    <p>
-    Note: The missing data are put 0.
-    </p>
-            
-
-
-
+    
+    
+    
 </body>
 </html>
